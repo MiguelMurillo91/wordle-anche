@@ -4,10 +4,38 @@ import "@testing-library/jest-dom/extend-expect"; // Import this for better matc
 import App from "./App"; // Import your component
 
 test("renders with a specific class name", () => {
-  // Render the component
-  const { container } = render(<App />);
+	// Render the component
+	const { container } = render(<App />);
 
-  // Check if the element with the specified class exists
-  const elementWithClassName = container.querySelector(".columns"); // Replace 'your-class-name' with the actual class name
-  expect(elementWithClassName).toBeInTheDocument();
+	// Check if the element with the specified class exists
+	const elementWithClassName = container.querySelector(".columns"); // Replace 'your-class-name' with the actual class name
+	expect(elementWithClassName).toBeInTheDocument();
+});
+test("Board container has the right class name", () => {
+	const { container } = render(<App />);
+
+	// Check if the element with the specified class exists
+	const elementWithClassName = container.querySelector(".board-col");
+	expect(elementWithClassName).toBeInTheDocument();
+});
+test("Keyboard has the right class name", () => {
+	const { container } = render(<App />);
+
+	// Check if the element with the specified class exists
+	const elementWithClassName = container.querySelector(".keyboard-wrapper");
+	expect(elementWithClassName).toBeInTheDocument();
+});
+test("div has the right id name", () => {
+	const { container } = render(<App />);
+
+	// Check if the element with the specified class exists
+	const elementWithClassName = container.querySelector("#main");
+	expect(elementWithClassName).toBeInTheDocument();
+});
+test("div has the right id name", () => {
+	const { container } = render(<App />);
+
+	// Check if the element with the specified class exists
+	const elementWithClassName = container.querySelector("#game");
+	expect(elementWithClassName).toBeInTheDocument();
 });
